@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="Field Change History">
+    <template if:true={data}>
+      <lightning-datatable
+        key-field="Id"
+        data={data}
+        columns={columns}
+        hide-checkbox-column="true"
+      ></lightning-datatable>
+    </template>
+    <template if:true={error}>
+      <p class="slds-text-color_error">{error}</p>
+    </template>
+    <template if:true={isLoading}>
+      <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+  </lightning-card>
+</template>
